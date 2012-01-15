@@ -36,7 +36,7 @@
 @end
 
 @implementation BAFillableStar
-@synthesize fillPercent, fillColor, backgroundColor, strokeColor, fillPercent, lineWidth;
+@synthesize fillPercent, fillColor, backgroundColor, strokeColor, lineWidth;
 
 - (id)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
