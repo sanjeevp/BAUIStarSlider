@@ -133,7 +133,7 @@
 	CGContextClip(context);  //clip drawing to the area defined by this path
   
 	rect.size.width = rect.size.width * 1.0f;  //we want make the width of the rect
-	CGContextSetFillColorWithColor(context, [[UIColor yellowColor] CGColor]);
+	CGContextSetFillColorWithColor(context, [starBackgroundColor CGColor]);
 	CGContextFillRect(context, rect);
 	
 	CGContextRestoreGState(context);
