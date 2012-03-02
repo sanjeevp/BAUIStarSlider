@@ -57,9 +57,9 @@
 		
 		//default colors
 		self.fillColor = [UIColor yellowColor];
-		self.backgroundColor = [UIColor clearColor];
+		self.backgroundColor = [UIColor whiteColor];
 		self.strokeColor = [UIColor blackColor];
-      self.starBackgroundColor = self.backgroundColor;
+    self.starBackgroundColor = self.backgroundColor;
 		
       
 		//scale our normalized points to the dimensions of the rectangle
