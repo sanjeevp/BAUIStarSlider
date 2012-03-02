@@ -13,10 +13,10 @@
 		151CB84C150110930070A3B7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 151CB84A150110930070A3B7 /* InfoPlist.strings */; };
 		151CB84E150110930070A3B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 151CB84D150110930070A3B7 /* main.m */; };
 		151CB852150110930070A3B7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 151CB851150110930070A3B7 /* AppDelegate.m */; };
-		151CB863150110AE0070A3B7 /* BAFillableStar.m in Sources */ = {isa = PBXBuildFile; fileRef = 151CB860150110AE0070A3B7 /* BAFillableStar.m */; };
-		151CB864150110AE0070A3B7 /* BAUIStarSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 151CB862150110AE0070A3B7 /* BAUIStarSlider.m */; };
 		151CB868150110EC0070A3B7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 151CB866150110EC0070A3B7 /* ViewController.m */; };
 		151CB869150110EC0070A3B7 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 151CB867150110EC0070A3B7 /* ViewController.xib */; };
+		15AF3CE915013F7300263C32 /* BAFillableStar.m in Sources */ = {isa = PBXBuildFile; fileRef = 15AF3CE615013F7300263C32 /* BAFillableStar.m */; };
+		15AF3CEA15013F7300263C32 /* BAUIStarSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 15AF3CE815013F7300263C32 /* BAUIStarSlider.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,13 +30,13 @@
 		151CB84F150110930070A3B7 /* BAUIStarSlider-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BAUIStarSlider-Prefix.pch"; sourceTree = "<group>"; };
 		151CB850150110930070A3B7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		151CB851150110930070A3B7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		151CB85F150110AE0070A3B7 /* BAFillableStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BAFillableStar.h; path = ../../Classes/BAFillableStar.h; sourceTree = "<group>"; };
-		151CB860150110AE0070A3B7 /* BAFillableStar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BAFillableStar.m; path = ../../Classes/BAFillableStar.m; sourceTree = "<group>"; };
-		151CB861150110AE0070A3B7 /* BAUIStarSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BAUIStarSlider.h; path = ../../Classes/BAUIStarSlider.h; sourceTree = "<group>"; };
-		151CB862150110AE0070A3B7 /* BAUIStarSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BAUIStarSlider.m; path = ../../Classes/BAUIStarSlider.m; sourceTree = "<group>"; };
 		151CB865150110EC0070A3B7 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ../ViewController.h; sourceTree = "<group>"; };
 		151CB866150110EC0070A3B7 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ../ViewController.m; sourceTree = "<group>"; };
 		151CB867150110EC0070A3B7 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ViewController.xib; path = ../ViewController.xib; sourceTree = "<group>"; };
+		15AF3CE515013F7300263C32 /* BAFillableStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAFillableStar.h; sourceTree = "<group>"; };
+		15AF3CE615013F7300263C32 /* BAFillableStar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAFillableStar.m; sourceTree = "<group>"; };
+		15AF3CE715013F7300263C32 /* BAUIStarSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAUIStarSlider.h; sourceTree = "<group>"; };
+		15AF3CE815013F7300263C32 /* BAUIStarSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAUIStarSlider.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,10 +109,10 @@
 		151CB85E150110980070A3B7 /* BAUIStarSlider */ = {
 			isa = PBXGroup;
 			children = (
-				151CB85F150110AE0070A3B7 /* BAFillableStar.h */,
-				151CB860150110AE0070A3B7 /* BAFillableStar.m */,
-				151CB861150110AE0070A3B7 /* BAUIStarSlider.h */,
-				151CB862150110AE0070A3B7 /* BAUIStarSlider.m */,
+				15AF3CE515013F7300263C32 /* BAFillableStar.h */,
+				15AF3CE615013F7300263C32 /* BAFillableStar.m */,
+				15AF3CE715013F7300263C32 /* BAUIStarSlider.h */,
+				15AF3CE815013F7300263C32 /* BAUIStarSlider.m */,
 			);
 			name = BAUIStarSlider;
 			sourceTree = "<group>";
@@ -182,9 +182,9 @@
 			files = (
 				151CB84E150110930070A3B7 /* main.m in Sources */,
 				151CB852150110930070A3B7 /* AppDelegate.m in Sources */,
-				151CB863150110AE0070A3B7 /* BAFillableStar.m in Sources */,
-				151CB864150110AE0070A3B7 /* BAUIStarSlider.m in Sources */,
 				151CB868150110EC0070A3B7 /* ViewController.m in Sources */,
+				15AF3CE915013F7300263C32 /* BAFillableStar.m in Sources */,
+				15AF3CEA15013F7300263C32 /* BAUIStarSlider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +286,7 @@
 				151CB85D150110930070A3B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
