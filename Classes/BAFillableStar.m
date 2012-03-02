@@ -53,7 +53,7 @@
 		points[8] = CGPointMake(0,0.388);
 		points[9] = CGPointMake(0.346,0.338);
 	
-		self.lineWidth = [NSNumber numberWithFloat:2.0];  //default line width
+		self.lineWidth = [NSNumber numberWithFloat:1.0];  //default line width
 		
 		//default colors
 		self.fillColor = [UIColor yellowColor];
@@ -61,6 +61,7 @@
 		self.strokeColor = [UIColor blackColor];
       self.starBackgroundColor = self.backgroundColor;
 		
+      
 		//scale our normalized points to the dimensions of the rectangle
 		for (int i=0; i<10; i++) {
 			points[i].x = points[i].x * frame.size.width;

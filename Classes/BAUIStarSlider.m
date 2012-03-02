@@ -74,10 +74,10 @@
     if ([v isKindOfClass:[BAFillableStar class] ]) {
       BAFillableStar *star = (BAFillableStar *)v;
       
-      [star performSelector:selector withObject:color];
-      
-      [star setNeedsDisplay];
-      
+      if ([star respondsToSelector:selector]) {
+        [star performSelector:selector withObject:color];
+        [star setNeedsDisplay];
+      } 
     }
   }
 
@@ -121,7 +121,7 @@
   [self setObjects:_strokeColor forSelector:@selector(setStrokeColor:)];
 }
 
-- (void)lineWidth:(CGFloat)widht {
+- (void)setLineWidth:(CGFloat)widht {
   _lineWidth = widht;
   [self setObjects:[NSNumber numberWithFloat:_lineWidth] forSelector:@selector(setLineWidth:)];
 }
