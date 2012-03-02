@@ -32,6 +32,7 @@
 @interface BAUIStarSlider (Private)
 -(float)getApproximatedPart:(float)part;
 -(void)fillStars;
+- (void)setObjects:(id)color forSelector:(SEL)selector;
 @end
 
 @implementation BAUIStarSlider
@@ -41,6 +42,7 @@
 @synthesize strokeColor = _strokeColor;
 @synthesize backgroundColor = _backgroundColor;
 @synthesize lineWidth = _lineWidth;
+@synthesize starBackgroundColor = _starBackgroundColor;
 
 
 -(id)initWithFrame:(CGRect)frame andStars:(int)inNumStars
@@ -66,22 +68,38 @@
 	return self;
 }
 
-- (void)setFillColor:(UIColor *)color {
-  [_fillColor release];
-  _fillColor = nil;
-  
-  _fillColor = [color retain];
+- (void)setObjects:(UIColor *)color forSelector:(SEL)selector {
   
   for (UIView *v in self.subviews) {
     if ([v isKindOfClass:[BAFillableStar class] ]) {
       BAFillableStar *star = (BAFillableStar *)v;
       
-      [star setFillColor:_fillColor];
+      [star performSelector:selector withObject:color];
       
       [star setNeedsDisplay];
-
+      
     }
   }
+
+}
+
+- (void)setFillColor:(UIColor *)color {
+  [_fillColor release];
+  _fillColor = nil;
+  
+  _fillColor = [color retain];
+ 
+  [self setObjects:_fillColor forSelector:@selector(setFillColor:)];
+ 
+}
+
+- (void)setStarBackgroundColor:(UIColor *)color {
+  [_starBackgroundColor release];
+  _starBackgroundColor = nil;
+  
+  _starBackgroundColor = [color retain];
+  [self setObjects:_starBackgroundColor forSelector:@selector(setStarBackgroundColor:)];
+      
 }
 
 - (void)setBackgroundColor:(UIColor *)color {
@@ -90,16 +108,9 @@
   
   _backgroundColor = [color retain];
   
-  for (UIView *v in self.subviews) {
-    if ([v isKindOfClass:[BAFillableStar class] ]) {
-      BAFillableStar *star = (BAFillableStar *)v;
-      
-      [star setBackgroundColor:_backgroundColor];
-      
-      [star setNeedsDisplay];
+  [self setObjects:_backgroundColor forSelector:@selector(setBackgroundColor:)];
 
-    }
-  }
+ 
 }
 
 - (void)setStrokeColor:(UIColor *)color {
@@ -107,30 +118,12 @@
   _strokeColor = nil;
   
   _strokeColor = [color retain];
-  
-  for (UIView *v in self.subviews) {
-    if ([v isKindOfClass:[BAFillableStar class] ]) {
-      BAFillableStar *star = (BAFillableStar *)v;
-      
-      [star setStrokeColor:_strokeColor];
-      
-      [star setNeedsDisplay];
-    }
-  }
+  [self setObjects:_strokeColor forSelector:@selector(setStrokeColor:)];
 }
 
 - (void)lineWidth:(CGFloat)widht {
   _lineWidth = widht;
-  
-  for (UIView *v in self.subviews) {
-    if ([v isKindOfClass:[BAFillableStar class] ]) {
-      BAFillableStar *star = (BAFillableStar *)v;
-      
-      [star setLineWidth:_lineWidth];
-      
-      [star setNeedsDisplay];
-    }
-  }
+  [self setObjects:[NSNumber numberWithFloat:_lineWidth] forSelector:@selector(setLineWidth:)];
 }
 
 - (void)dealloc {

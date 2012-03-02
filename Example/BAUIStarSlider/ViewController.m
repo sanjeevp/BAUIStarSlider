@@ -18,17 +18,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 
+  
   BAUIStarSlider *slider = [BAUIStarSlider sliderWithFrame:CGRectMake(10, 10, 300, 50) stars:5];
   
   [slider setStrokeColor:[UIColor grayColor]];
   [slider setFillColor:[UIColor redColor]];
+  [slider setBackgroundColor:[UIColor whiteColor]];
+  [slider setStarBackgroundColor:[UIColor greenColor]];
   [slider setLineWidth:1.0f];
-  [slider setBackgroundColor:[UIColor blackColor]];
   
   [self.view addSubview:slider];
   
-  [slider release];
-
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

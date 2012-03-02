@@ -36,7 +36,7 @@
 @end
 
 @implementation BAFillableStar
-@synthesize fillPercent, fillColor, backgroundColor, strokeColor, lineWidth;
+@synthesize fillPercent, fillColor, backgroundColor, strokeColor, lineWidth, starBackgroundColor;
 
 - (id)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
@@ -53,12 +53,13 @@
 		points[8] = CGPointMake(0,0.388);
 		points[9] = CGPointMake(0.346,0.338);
 	
-		lineWidth = 2.0;  //default line width
+		self.lineWidth = [NSNumber numberWithFloat:2.0];  //default line width
 		
 		//default colors
 		self.fillColor = [UIColor yellowColor];
-		self.backgroundColor = [UIColor whiteColor];
+		self.backgroundColor = [UIColor clearColor];
 		self.strokeColor = [UIColor blackColor];
+      self.starBackgroundColor = self.backgroundColor;
 		
 		//scale our normalized points to the dimensions of the rectangle
 		for (int i=0; i<10; i++) {
@@ -102,6 +103,12 @@
 }
 
 - (void)dealloc {
+  
+  [fillColor release];
+  [backgroundColor release];
+  [strokeColor release];
+  [starBackgroundColor release];
+  
     [super dealloc];
 }
 
@@ -113,8 +120,24 @@
 @implementation BAFillableStar (Private)
 -(void) fillBackgroundOfContext:(CGContextRef)context withRect:(CGRect)rect;
 {
-	CGContextSetFillColorWithColor(context, [backgroundColor CGColor]);
+	CGContextSetFillColorWithColor(context, [ backgroundColor CGColor]);
 	CGContextFillRect(context, rect);
+  
+  CGContextSaveGState(context);
+	
+	//create the path using our points array
+	CGContextBeginPath(context);
+	CGContextAddLines(context, points, 10);  
+	CGContextClosePath(context);
+	CGContextClip(context);  //clip drawing to the area defined by this path
+  
+	rect.size.width = rect.size.width * 1.0f;  //we want make the width of the rect
+	CGContextSetFillColorWithColor(context, [[UIColor yellowColor] CGColor]);
+	CGContextFillRect(context, rect);
+	
+	CGContextRestoreGState(context);
+
+
 }
 
 -(void) fillStarInContext:(CGContextRef)context withRect:(CGRect)rect
@@ -141,7 +164,7 @@
 	CGContextAddLines(context, points, 10);  //create the path
 	CGContextClosePath(context);
 	//set the properties for the line
-	CGContextSetLineWidth(context, lineWidth);
+	CGContextSetLineWidth(context, lineWidth.floatValue);
 	CGContextSetStrokeColorWithColor(context, [strokeColor CGColor]);
 	
 	//stroke the path
