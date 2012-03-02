@@ -19,14 +19,16 @@
     // Do any additional setup after loading the view from its nib.
 
   
+  self.view.backgroundColor = [UIColor purpleColor];
+  
   BAUIStarSlider *slider = [BAUIStarSlider sliderWithFrame:CGRectMake(10, 10, 300, 50) stars:5];
-  /*
+  
   [slider setStrokeColor:[UIColor grayColor]];
   [slider setFillColor:[UIColor redColor]];
-  [slider setBackgroundColor:[UIColor whiteColor]];
+  [slider setBackgroundColor:[UIColor clearColor]];
   [slider setStarBackgroundColor:[UIColor greenColor]];
   [slider setLineWidth:1.0f];
-  */
+  
   [self.view addSubview:slider];
   
 }
