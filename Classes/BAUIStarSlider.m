@@ -37,6 +37,11 @@
 @implementation BAUIStarSlider
 
 @synthesize approxMode, value;
+@synthesize fillColor = _fillColor;
+@synthesize strokeColor = _strokeColor;
+@synthesize backgroundColor = _backgroundColor;
+@synthesize lineWidth = _lineWidth;
+
 
 -(id)initWithFrame:(CGRect)frame andStars:(int)inNumStars
 {
@@ -61,10 +66,87 @@
 	return self;
 }
 
-- (void)dealloc {
-	[starArray release];
-    [super dealloc];
+- (void)setFillColor:(UIColor *)color {
+  [_fillColor release];
+  _fillColor = nil;
+  
+  _fillColor = [color retain];
+  
+  for (UIView *v in self.subviews) {
+    if ([v isKindOfClass:[BAFillableStar class] ]) {
+      BAFillableStar *star = (BAFillableStar *)v;
+      
+      [star setFillColor:_fillColor];
+      
+      [star setNeedsDisplay];
+
+    }
+  }
 }
+
+- (void)setBackgroundColor:(UIColor *)color {
+  [_backgroundColor release];
+  _backgroundColor = nil;
+  
+  _backgroundColor = [color retain];
+  
+  for (UIView *v in self.subviews) {
+    if ([v isKindOfClass:[BAFillableStar class] ]) {
+      BAFillableStar *star = (BAFillableStar *)v;
+      
+      [star setBackgroundColor:_backgroundColor];
+      
+      [star setNeedsDisplay];
+
+    }
+  }
+}
+
+- (void)setStrokeColor:(UIColor *)color {
+  [_strokeColor release];
+  _strokeColor = nil;
+  
+  _strokeColor = [color retain];
+  
+  for (UIView *v in self.subviews) {
+    if ([v isKindOfClass:[BAFillableStar class] ]) {
+      BAFillableStar *star = (BAFillableStar *)v;
+      
+      [star setStrokeColor:_strokeColor];
+      
+      [star setNeedsDisplay];
+    }
+  }
+}
+
+- (void)lineWidth:(CGFloat)widht {
+  _lineWidth = widht;
+  
+  for (UIView *v in self.subviews) {
+    if ([v isKindOfClass:[BAFillableStar class] ]) {
+      BAFillableStar *star = (BAFillableStar *)v;
+      
+      [star setLineWidth:_lineWidth];
+      
+      [star setNeedsDisplay];
+    }
+  }
+}
+
+- (void)dealloc {
+	[_fillColor release];
+  [_strokeColor release];
+  [_backgroundColor release];
+  [starArray release];
+  [super dealloc];
+}
+
++ (BAUIStarSlider *)sliderWithFrame:(CGRect)frame stars:(NSUInteger)stars {
+  BAUIStarSlider *slider = [[BAUIStarSlider alloc] initWithFrame:frame andStars: stars];
+  
+  return [slider autorelease];
+}
+
 
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {

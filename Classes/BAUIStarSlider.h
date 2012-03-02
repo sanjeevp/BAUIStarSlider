@@ -1,7 +1,7 @@
 //
-//  BAFillableStar.h
+//  BAUIStarSlider.h
 //
-//  Created by Sanjeev Paskaradevan on 15/04/09.
+//  Created by Sanjeev Paskaradevan on 04/05/09.
 //
 //  Copyright 2009 (c) BeefyApps. www.beefyapps.com
 //
@@ -26,23 +26,32 @@
 //  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 //  OTHER DEALINGS IN THE SOFTWARE.
 
+
 #import <UIKit/UIKit.h>
 
-
-@interface BAFillableStar : UIView {
+typedef enum 
+{	
+	ApproximationModeNone,
+	ApproximationModeWhole,
+	ApproximationModeHalf
 	
-	CGPoint points[10];
-	UIColor * fillColor;
-	UIColor * backgroundColor;
-	UIColor * strokeColor;
-	
-	CGFloat lineWidth;
+} SliderApproximationMode;
 
-	float fillPercent;
+@interface BAUIStarSlider : UIControl {
+	
+	NSMutableArray * starArray;
+	int numStars;
+	SliderApproximationMode approxMode;
+	float value;
 }
+@property(nonatomic) SliderApproximationMode approxMode;
+@property(nonatomic) float value;
 
-@property (nonatomic, retain) UIColor * fillColor, * backgroundColor, * strokeColor;
+-(id)initWithFrame:(CGRect)frame andStars:(int)inNumStars;
+
+@property (nonatomic, retain) UIColor *fillColor, *backgroundColor, *strokeColor;
 @property (nonatomic) CGFloat lineWidth;
-@property (nonatomic) float fillPercent;
+
++ (BAUIStarSlider *)sliderWithFrame:(CGRect)frame stars:(NSUInteger)stars;
 
 @end
