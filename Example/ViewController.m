@@ -25,7 +25,7 @@
   
   [slider setStrokeColor:[UIColor grayColor]];
   [slider setFillColor:[UIColor redColor]];
-  [slider setBackgroundColor:[UIColor clearColor]];
+  [slider setBackgroundColor:[UIColor blueColor]];
   [slider setStarBackgroundColor:[UIColor greenColor]];
   [slider setLineWidth:1.0f];
   
