@@ -49,6 +49,7 @@
 {
 	if (self = [super initWithFrame:frame])
 	{
+    
 		numStars = inNumStars;
 		starArray = [[NSMutableArray alloc] initWithCapacity:numStars];
 		approxMode = ApproximationModeWhole; //default approximation mode
@@ -130,6 +131,7 @@
 	[_fillColor release];
   [_strokeColor release];
   [_backgroundColor release];
+  [_starBackgroundColor release];
   [starArray release];
   [super dealloc];
 }
