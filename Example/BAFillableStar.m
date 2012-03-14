@@ -108,6 +108,7 @@
   [strokeColor release];
   [starBackgroundColor release];
   [lineWidth release];
+  
   [super dealloc];
 }
 
