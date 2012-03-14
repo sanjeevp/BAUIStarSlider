@@ -131,6 +131,7 @@
 	[_fillColor release];
   [_strokeColor release];
   [_backgroundColor release];
+  [_starBackgroundColor release];
   [starArray release];
   [super dealloc];
 }
