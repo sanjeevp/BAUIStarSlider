@@ -32,16 +32,24 @@
 @interface BAUIStarSlider (Private)
 -(float)getApproximatedPart:(float)part;
 -(void)fillStars;
+- (void)setObjects:(id)color forSelector:(SEL)selector;
 @end
 
 @implementation BAUIStarSlider
 
 @synthesize approxMode, value;
+@synthesize fillColor = _fillColor;
+@synthesize strokeColor = _strokeColor;
+@synthesize backgroundColor = _backgroundColor;
+@synthesize lineWidth = _lineWidth;
+@synthesize starBackgroundColor = _starBackgroundColor;
+
 
 -(id)initWithFrame:(CGRect)frame andStars:(int)inNumStars
 {
 	if (self = [super initWithFrame:frame])
 	{
+    
 		numStars = inNumStars;
 		starArray = [[NSMutableArray alloc] initWithCapacity:numStars];
 		approxMode = ApproximationModeWhole; //default approximation mode
@@ -61,10 +69,79 @@
 	return self;
 }
 
-- (void)dealloc {
-	[starArray release];
-    [super dealloc];
+- (void)setObjects:(UIColor *)color forSelector:(SEL)selector {
+  
+  for (UIView *v in self.subviews) {
+    if ([v isKindOfClass:[BAFillableStar class] ]) {
+      BAFillableStar *star = (BAFillableStar *)v;
+      
+      if ([star respondsToSelector:selector]) {
+        [star performSelector:selector withObject:color];
+        [star setNeedsDisplay];
+      } 
+    }
+  }
+
 }
+
+- (void)setFillColor:(UIColor *)color {
+  [_fillColor release];
+  _fillColor = nil;
+  
+  _fillColor = [color retain];
+ 
+  [self setObjects:_fillColor forSelector:@selector(setFillColor:)];
+ 
+}
+
+- (void)setStarBackgroundColor:(UIColor *)color {
+  [_starBackgroundColor release];
+  _starBackgroundColor = nil;
+  
+  _starBackgroundColor = [color retain];
+  [self setObjects:_starBackgroundColor forSelector:@selector(setStarBackgroundColor:)];
+      
+}
+
+- (void)setBackgroundColor:(UIColor *)color {
+  [_backgroundColor release];
+  _backgroundColor = nil;
+  
+  _backgroundColor = [color retain];
+  
+  [self setObjects:_backgroundColor forSelector:@selector(setBackgroundColor:)];
+
+ 
+}
+
+- (void)setStrokeColor:(UIColor *)color {
+  [_strokeColor release];
+  _strokeColor = nil;
+  
+  _strokeColor = [color retain];
+  [self setObjects:_strokeColor forSelector:@selector(setStrokeColor:)];
+}
+
+- (void)setLineWidth:(CGFloat)widht {
+  _lineWidth = widht;
+  [self setObjects:[NSNumber numberWithFloat:_lineWidth] forSelector:@selector(setLineWidth:)];
+}
+
+- (void)dealloc {
+	[_fillColor release];
+  [_strokeColor release];
+  [_backgroundColor release];
+  [_starBackgroundColor release];
+  [starArray release];
+  [super dealloc];
+}
+
++ (BAUIStarSlider *)sliderWithFrame:(CGRect)frame stars:(NSUInteger)stars {
+  BAUIStarSlider *slider = [[BAUIStarSlider alloc] initWithFrame:frame andStars: stars];
+  
+  return [slider autorelease];
+}
+
 
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {

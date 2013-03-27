@@ -49,4 +49,9 @@ typedef enum
 
 -(id)initWithFrame:(CGRect)frame andStars:(int)inNumStars;
 
+@property (nonatomic, retain) UIColor *fillColor, *backgroundColor, *strokeColor, *starBackgroundColor;
+@property (nonatomic) CGFloat lineWidth;
+
++ (BAUIStarSlider *)sliderWithFrame:(CGRect)frame stars:(NSUInteger)stars;
+
 @end

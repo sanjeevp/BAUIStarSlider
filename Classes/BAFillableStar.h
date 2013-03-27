@@ -36,13 +36,13 @@
 	UIColor * backgroundColor;
 	UIColor * strokeColor;
 	
-	CGFloat lineWidth;
+	NSNumber *lineWidth;
 
 	float fillPercent;
 }
 
-@property (nonatomic, retain) UIColor * fillColor, * backgroundColor, * strokeColor;
-@property (nonatomic) CGFloat lineWidth;
+@property (nonatomic, retain) UIColor *fillColor, *backgroundColor, *strokeColor, *starBackgroundColor;
+@property (nonatomic, retain) NSNumber *lineWidth;
 @property (nonatomic) float fillPercent;
 
 @end

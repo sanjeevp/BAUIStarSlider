@@ -30,13 +30,14 @@
 
 // private methods
 @interface BAFillableStar (Private)
--(void) fillStarInContext:(CGContextRef)context withRect:(CGRect)rect;
 -(void) fillBackgroundOfContext:(CGContextRef)context withRect:(CGRect)rect;
 -(void) drawStarOutlineInContext:(CGContextRef)context withRect:(CGRect)rect;
+-(void) fillStarInContext:(CGContextRef)context withRect:(CGRect)rect withColor:(UIColor *)color fillePercent:(CGFloat)percent;
+
 @end
 
 @implementation BAFillableStar
-@synthesize fillPercent, fillColor, backgroundColor, strokeColor, fillPercent, lineWidth;
+@synthesize fillPercent, fillColor, backgroundColor, strokeColor, lineWidth, starBackgroundColor;
 
 - (id)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
@@ -53,13 +54,16 @@
 		points[8] = CGPointMake(0,0.388);
 		points[9] = CGPointMake(0.346,0.338);
 	
-		lineWidth = 2.0;  //default line width
+		self.lineWidth = [NSNumber numberWithFloat:1.0];  //default line width
 		
 		//default colors
 		self.fillColor = [UIColor yellowColor];
-		self.backgroundColor = [UIColor whiteColor];
+		self.backgroundColor = [UIColor clearColor];
 		self.strokeColor = [UIColor blackColor];
-		
+    self.starBackgroundColor = [UIColor whiteColor];
+    
+    self.opaque = NO;
+      
 		//scale our normalized points to the dimensions of the rectangle
 		for (int i=0; i<10; i++) {
 			points[i].x = points[i].x * frame.size.width;
@@ -71,26 +75,22 @@
 
 
 - (void)drawRect:(CGRect)rect {
-
+  [super drawRect: rect];
 	CGContextRef context = UIGraphicsGetCurrentContext();
-	CGContextSetShouldAntialias(context, true);
-	
-	CGLayerRef layer = CGLayerCreateWithContext(context, rect.size, NULL);
-	CGContextRef layerContext = CGLayerGetContext(layer);
+  CGContextSetShouldAntialias(context, true);
 
-	[self fillBackgroundOfContext:layerContext withRect:rect];
-	[self fillStarInContext:layerContext withRect:rect];
-	[self drawStarOutlineInContext:layerContext withRect:rect];
-	
-	CGContextDrawLayerInRect(context, rect, layer);  //draw the layer to the actual drawing context
-	
-	CGLayerRelease(layer);  //release the layer
+	[self fillBackgroundOfContext:context withRect:rect];
+	[self fillStarInContext:context withRect:rect withColor:self.fillColor fillePercent:self.fillPercent];
+	[self drawStarOutlineInContext:context withRect:rect];
 }
+
 
 -(void)drawWithContext:(CGContextRef)context
 {
+  CGContextSetShouldAntialias(context, true);
+  
 	[self fillBackgroundOfContext:context withRect:self.frame];
-	[self fillStarInContext:context withRect:self.frame];
+	[self fillStarInContext:context withRect:self.frame withColor:self.fillColor fillePercent:self.fillPercent];
 	[self drawStarOutlineInContext:context withRect:self.frame];
 	
 }
@@ -102,7 +102,14 @@
 }
 
 - (void)dealloc {
-    [super dealloc];
+  
+  [fillColor release];
+  [backgroundColor release];
+  [strokeColor release];
+  [starBackgroundColor release];
+  [lineWidth release];
+  
+  [super dealloc];
 }
 
 
@@ -113,11 +120,17 @@
 @implementation BAFillableStar (Private)
 -(void) fillBackgroundOfContext:(CGContextRef)context withRect:(CGRect)rect;
 {
-	CGContextSetFillColorWithColor(context, [backgroundColor CGColor]);
-	CGContextFillRect(context, rect);
+  
+  CGContextSetFillColorWithColor(context, [ backgroundColor CGColor]);
+  CGContextFillRect(context, rect);
+
+  
+  [self fillStarInContext:context withRect:rect withColor: self.starBackgroundColor fillePercent: 1.0f];
+
+
 }
 
--(void) fillStarInContext:(CGContextRef)context withRect:(CGRect)rect
+-(void) fillStarInContext:(CGContextRef)context withRect:(CGRect)rect withColor:(UIColor *)color fillePercent:(CGFloat)percent
 {
 	CGContextSaveGState(context);
 	
@@ -127,8 +140,8 @@
 	CGContextClosePath(context);
 	CGContextClip(context);  //clip drawing to the area defined by this path
 
-	rect.size.width = rect.size.width * fillPercent;  //we want make the width of the rect
-	CGContextSetFillColorWithColor(context, [fillColor CGColor]);
+	rect.size.width = rect.size.width * percent;  //we want make the width of the rect
+	CGContextSetFillColorWithColor(context, [color CGColor]);
 	CGContextFillRect(context, rect);
 	
 	CGContextRestoreGState(context);
@@ -141,7 +154,7 @@
 	CGContextAddLines(context, points, 10);  //create the path
 	CGContextClosePath(context);
 	//set the properties for the line
-	CGContextSetLineWidth(context, lineWidth);
+	CGContextSetLineWidth(context, lineWidth.floatValue);
 	CGContextSetStrokeColorWithColor(context, [strokeColor CGColor]);
 	
 	//stroke the path

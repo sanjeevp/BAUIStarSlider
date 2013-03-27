@@ -1,0 +1,294 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		151CB842150110930070A3B7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 151CB841150110930070A3B7 /* UIKit.framework */; };
+		151CB844150110930070A3B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 151CB843150110930070A3B7 /* Foundation.framework */; };
+		151CB846150110930070A3B7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 151CB845150110930070A3B7 /* CoreGraphics.framework */; };
+		151CB84C150110930070A3B7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 151CB84A150110930070A3B7 /* InfoPlist.strings */; };
+		151CB84E150110930070A3B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 151CB84D150110930070A3B7 /* main.m */; };
+		151CB852150110930070A3B7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 151CB851150110930070A3B7 /* AppDelegate.m */; };
+		151CB868150110EC0070A3B7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 151CB866150110EC0070A3B7 /* ViewController.m */; };
+		151CB869150110EC0070A3B7 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 151CB867150110EC0070A3B7 /* ViewController.xib */; };
+		154A2B9015111F2500A40B49 /* BAFillableStar.m in Sources */ = {isa = PBXBuildFile; fileRef = 154A2B8D15111F2500A40B49 /* BAFillableStar.m */; };
+		154A2B9115111F2500A40B49 /* BAUIStarSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 154A2B8F15111F2500A40B49 /* BAUIStarSlider.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		151CB83D150110930070A3B7 /* BAUIStarSlider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BAUIStarSlider.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		151CB841150110930070A3B7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		151CB843150110930070A3B7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		151CB845150110930070A3B7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		151CB849150110930070A3B7 /* BAUIStarSlider-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BAUIStarSlider-Info.plist"; sourceTree = "<group>"; };
+		151CB84B150110930070A3B7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		151CB84D150110930070A3B7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		151CB84F150110930070A3B7 /* BAUIStarSlider-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BAUIStarSlider-Prefix.pch"; sourceTree = "<group>"; };
+		151CB850150110930070A3B7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		151CB851150110930070A3B7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		151CB865150110EC0070A3B7 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ../ViewController.h; sourceTree = "<group>"; };
+		151CB866150110EC0070A3B7 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ../ViewController.m; sourceTree = "<group>"; };
+		151CB867150110EC0070A3B7 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ViewController.xib; path = ../ViewController.xib; sourceTree = "<group>"; };
+		154A2B8C15111F2500A40B49 /* BAFillableStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BAFillableStar.h; path = ../Classes/BAFillableStar.h; sourceTree = "<group>"; };
+		154A2B8D15111F2500A40B49 /* BAFillableStar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BAFillableStar.m; path = ../Classes/BAFillableStar.m; sourceTree = "<group>"; };
+		154A2B8E15111F2500A40B49 /* BAUIStarSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BAUIStarSlider.h; path = ../Classes/BAUIStarSlider.h; sourceTree = "<group>"; };
+		154A2B8F15111F2500A40B49 /* BAUIStarSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BAUIStarSlider.m; path = ../Classes/BAUIStarSlider.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		151CB83A150110930070A3B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				151CB842150110930070A3B7 /* UIKit.framework in Frameworks */,
+				151CB844150110930070A3B7 /* Foundation.framework in Frameworks */,
+				151CB846150110930070A3B7 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		151CB832150110920070A3B7 = {
+			isa = PBXGroup;
+			children = (
+				151CB85E150110980070A3B7 /* BAUIStarSlider */,
+				151CB847150110930070A3B7 /* Classes */,
+				151CB840150110930070A3B7 /* Frameworks */,
+				151CB83E150110930070A3B7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		151CB83E150110930070A3B7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				151CB83D150110930070A3B7 /* BAUIStarSlider.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		151CB840150110930070A3B7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				151CB841150110930070A3B7 /* UIKit.framework */,
+				151CB843150110930070A3B7 /* Foundation.framework */,
+				151CB845150110930070A3B7 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		151CB847150110930070A3B7 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				151CB850150110930070A3B7 /* AppDelegate.h */,
+				151CB851150110930070A3B7 /* AppDelegate.m */,
+				151CB865150110EC0070A3B7 /* ViewController.h */,
+				151CB866150110EC0070A3B7 /* ViewController.m */,
+				151CB867150110EC0070A3B7 /* ViewController.xib */,
+				151CB848150110930070A3B7 /* Supporting Files */,
+			);
+			name = Classes;
+			path = BAUIStarSlider;
+			sourceTree = "<group>";
+		};
+		151CB848150110930070A3B7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				151CB849150110930070A3B7 /* BAUIStarSlider-Info.plist */,
+				151CB84A150110930070A3B7 /* InfoPlist.strings */,
+				151CB84D150110930070A3B7 /* main.m */,
+				151CB84F150110930070A3B7 /* BAUIStarSlider-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		151CB85E150110980070A3B7 /* BAUIStarSlider */ = {
+			isa = PBXGroup;
+			children = (
+				154A2B8C15111F2500A40B49 /* BAFillableStar.h */,
+				154A2B8D15111F2500A40B49 /* BAFillableStar.m */,
+				154A2B8E15111F2500A40B49 /* BAUIStarSlider.h */,
+				154A2B8F15111F2500A40B49 /* BAUIStarSlider.m */,
+			);
+			name = BAUIStarSlider;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		151CB83C150110930070A3B7 /* BAUIStarSlider */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 151CB85B150110930070A3B7 /* Build configuration list for PBXNativeTarget "BAUIStarSlider" */;
+			buildPhases = (
+				151CB839150110930070A3B7 /* Sources */,
+				151CB83A150110930070A3B7 /* Frameworks */,
+				151CB83B150110930070A3B7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BAUIStarSlider;
+			productName = BAUIStarSlider;
+			productReference = 151CB83D150110930070A3B7 /* BAUIStarSlider.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		151CB834150110920070A3B7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = NIDAG;
+			};
+			buildConfigurationList = 151CB837150110920070A3B7 /* Build configuration list for PBXProject "BAUIStarSlider" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 151CB832150110920070A3B7;
+			productRefGroup = 151CB83E150110930070A3B7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				151CB83C150110930070A3B7 /* BAUIStarSlider */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		151CB83B150110930070A3B7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				151CB84C150110930070A3B7 /* InfoPlist.strings in Resources */,
+				151CB869150110EC0070A3B7 /* ViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		151CB839150110930070A3B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				151CB84E150110930070A3B7 /* main.m in Sources */,
+				151CB852150110930070A3B7 /* AppDelegate.m in Sources */,
+				151CB868150110EC0070A3B7 /* ViewController.m in Sources */,
+				154A2B9015111F2500A40B49 /* BAFillableStar.m in Sources */,
+				154A2B9115111F2500A40B49 /* BAUIStarSlider.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		151CB84A150110930070A3B7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				151CB84B150110930070A3B7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		151CB859150110930070A3B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		151CB85A150110930070A3B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		151CB85C150110930070A3B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BAUIStarSlider/BAUIStarSlider-Prefix.pch";
+				INFOPLIST_FILE = "BAUIStarSlider/BAUIStarSlider-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		151CB85D150110930070A3B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BAUIStarSlider/BAUIStarSlider-Prefix.pch";
+				INFOPLIST_FILE = "BAUIStarSlider/BAUIStarSlider-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		151CB837150110920070A3B7 /* Build configuration list for PBXProject "BAUIStarSlider" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				151CB859150110930070A3B7 /* Debug */,
+				151CB85A150110930070A3B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		151CB85B150110930070A3B7 /* Build configuration list for PBXNativeTarget "BAUIStarSlider" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				151CB85C150110930070A3B7 /* Debug */,
+				151CB85D150110930070A3B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 151CB834150110920070A3B7 /* Project object */;
+}
